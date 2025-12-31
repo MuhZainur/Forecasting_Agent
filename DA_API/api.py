@@ -15,7 +15,9 @@ import logging
 import requests
 from datetime import timedelta, datetime
 
-MLE_API_URL = "http://localhost:8002/predict"
+import os
+
+MLE_API_URL = os.getenv("MLE_API_URL", "http://localhost:8002/predict")
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
