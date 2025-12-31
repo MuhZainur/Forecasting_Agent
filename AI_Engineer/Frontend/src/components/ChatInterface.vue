@@ -92,7 +92,7 @@ const startAnalysis = async () => {
   
   // Clear chat memory for new analysis
   try {
-    await axios.delete(`http://localhost:8005/memory/${selectedStock.value.ticker}`)
+    await axios.delete(`${config.VITE_API_URL}/memory/${selectedStock.value.ticker}`)
     messages.value = [] 
   } catch (e) {
     console.warn('Failed to clear memory:', e)
@@ -148,7 +148,7 @@ const startAnalysis = async () => {
     messages.value.push({ role: 'assistant', content: '🌍 Agent Search: Scanning breaking news...' })
     
     // We intentionally do NOT await this, but we handle the promise
-    axios.get(`http://localhost:8005/news/${selectedStock.value.ticker}`)
+    axios.get(`${config.VITE_API_URL}/news/${selectedStock.value.ticker}`)
       .then(newsResponse => {
         if (newsResponse.data && newsResponse.data.news) {
           newsContext.value = newsResponse.data.news
