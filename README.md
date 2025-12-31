@@ -6,7 +6,7 @@
 [![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)]()
 
 **🔴 LIVE DEMO:**
-*   *Coming Soon (Cloud Run / AWS)*
+[**🚀 Launch StockMind AI Dashboard**](https://forecasting-agent-frontend-567427950134.us-central1.run.app)
 
 An End-to-End AI-Powered Stock Forecasting & Analysis Platform. This project transforms raw market data into actionable insights using deep learning (NeuralForecast) and generative AI (Gemini Agent).
 
@@ -65,31 +65,15 @@ This project simulates a professional AI Engineering workflow, executed in **5 P
 
 ---
 
-## 🚀 How to Run (Docker)
+## 🚀 Deployment & Access
 
-The entire application can be launched with a single command using Docker Compose.
+The application is fully deployed on **Google Cloud Run** with a microservices architecture.
 
-### Prerequisites
-*   Docker & Docker Compose installed.
-*   **API Key**: Create a `.env` file in `AI_Engineer/Backend/` with your `GOOGLE_API_KEY`.
-
-### Steps
-1.  **Clone the Repository**
-    ```bash
-    git clone https://github.com/YourUsername/Stock_Forecasting.git
-    cd Stock_Forecasting
-    ```
-
-2.  **Launch Application**
-    ```bash
-    docker-compose up --build
-    ```
-
-3.  **Access Services**
-    *   **Frontend Dashboard:** http://localhost:5173
-    *   **Chat Backend (Swagger):** http://localhost:8005/docs
-    *   **Data Agent (Swagger):** http://localhost:8006/docs
-    *   **MLE API (Swagger):** http://localhost:8002/docs
+### 🔗 Live Services
+*   **Frontend Dashboard:** [https://forecasting-agent-frontend-567427950134.us-central1.run.app](https://forecasting-agent-frontend-567427950134.us-central1.run.app)
+*   **Chat Backend (Swagger):** [https://forecasting-agent-agentic-backend-567427950134.us-central1.run.app/docs](https://forecasting-agent-agentic-backend-567427950134.us-central1.run.app/docs)
+*   **Data Agent (Swagger):** [https://forecasting-agent-data-agent-567427950134.us-central1.run.app/docs](https://forecasting-agent-data-agent-567427950134.us-central1.run.app/docs)
+*   **MLE API (Swagger):** [https://forecasting-agent-567427950134.us-central1.run.app/docs](https://forecasting-agent-567427950134.us-central1.run.app/docs)
 
 ---
 
