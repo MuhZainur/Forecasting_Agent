@@ -30,7 +30,7 @@ class CPU_Unpickler(pickle.Unpickler):
             return super().find_class(module, name)
 
 def get_model_path(ticker: str):
-    return os.path.join("../DS/models", f"{ticker}_nbeats.pkl")
+    return os.path.join("models", f"{ticker}_nbeats.pkl")
 
 # --- SCHEMAS ---
 class PredictionRequest(BaseModel):
