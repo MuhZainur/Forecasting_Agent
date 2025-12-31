@@ -4,10 +4,15 @@ import axios from 'axios'
 import { marked } from 'marked'
 import PlotlyChart from './PlotlyChart.vue'
 
-// Use Environment Variables for Cloud Run, fallback to localhost for Dev
-const API_URL = import.meta.env.VITE_API_URL + '/api/chat' || 'http://localhost:8005/api/chat'
-const AI_CHAT_URL = import.meta.env.VITE_API_URL + '/chat' || 'http://localhost:8005/chat'
-const DA_API_URL = import.meta.env.VITE_DA_API_URL + '/analyze' || 'http://localhost:8006/analyze';
+// Use Runtime Config (Cloud Run) or Fallback (Local)
+const config = window.config || { 
+  VITE_API_URL: 'http://localhost:8005', 
+  VITE_DA_API_URL: 'http://localhost:8006' 
+};
+
+const API_URL = (config.VITE_API_URL) + '/api/chat'
+const AI_CHAT_URL = (config.VITE_API_URL) + '/chat'
+const DA_API_URL = (config.VITE_DA_API_URL) + '/analyze'
 
 const stockOptions = [
   { name: 'Nvidia', ticker: 'NVDA' },
