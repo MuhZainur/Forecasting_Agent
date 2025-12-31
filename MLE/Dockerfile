@@ -13,10 +13,7 @@ COPY requirements.txt .
 # Install dependencies (might take time for torch/neuralforecast)
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy model files from DS/models to container
-COPY ../DS/models ./models
-
-# Copy API code
+# Copy API code and models (models are now in MLE/models folder)
 COPY . .
 
 EXPOSE 8002
