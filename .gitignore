@@ -19,8 +19,8 @@ lightning_logs/
 wandb/
 *.csv
 datasets/
-models/*.pkl
-models/*.pth
+# models/*.pkl  <-- We keep these for deployment
+# models/*.pth  <-- We keep these for deployment
 
 # Node / Frontend
 node_modules/
