@@ -6,6 +6,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import List, Dict
 import logging
@@ -49,6 +50,15 @@ app = FastAPI(
     title="Stock Forecasting API",
     description="Production-grade API for stock price forecasting using N-BEATS",
     version="1.0.0"
+)
+
+# CORS - Allow all origins for microservices communication
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 # Global model cache (lazy loading)
