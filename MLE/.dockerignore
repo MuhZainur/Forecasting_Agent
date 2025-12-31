@@ -1,0 +1,29 @@
+
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+
+# Jupyter
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Local data/models that we might want to exclude if we copy selectively
+# But for now we are copying everything in context, so we might want to keep models if they are in the build context.
+# However, usually we don't want to copy the entire DS folder if we run from root.
+# Since we build from MLE folder, we are safe.
+
+# Logs
+*.log

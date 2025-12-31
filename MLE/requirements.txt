@@ -1,0 +1,17 @@
+
+fastapi==0.127.0
+uvicorn==0.40.0
+python-multipart==0.0.21
+pydantic==2.12.5
+requests==2.32.5
+torch==2.5.1
+neuralforecast==3.1.2
+pandas==2.1.4
+numpy==1.26.4
+scikit-learn==1.7.2
+yfinance==1.0
+matplotlib==3.7.5
+seaborn==0.13.2
+# MLE Dependencies (Added manually)
+redis>=5.0.1
+prometheus-client>=0.19.0

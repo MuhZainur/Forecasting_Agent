@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  # 1. MLE Service (Model Inference)
+  mle-api:
+    build:
+      context: ./MLE
+    container_name: stock-mle-api
+    ports:
+      - "8002:8002"
+    restart: always
+
+  # 2. DataAgent API (Technical Logic)
+  da-api:
+    build:
+      context: ./DA_API
+    container_name: stock-da-api
+    ports:
+      - "8006:8006"
+    depends_on:
+      - mle-api
+    restart: always
+
+  # 3. AI Engineer Backend (Chat & Search)
+  ai-backend:
+    build:
+      context: ./AI_Engineer/Backend
+    container_name: stock-ai-backend
+    ports:
+      - "8005:8005"
+    env_file:
+      - ./AI_Engineer/Backend/.env # Load secrets from file
+    restart: always
+
+  # 4. Frontend (UI)
+  frontend:
+    build:
+      context: ./AI_Engineer/Frontend
+    container_name: stock-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - ai-backend
+      - da-api
+    restart: always
+
+# Optional: Add Redis if caching is implemented later
+# redis:
+#   image: redis:alpine
+#   ports:
+#     - "6379:6379"
