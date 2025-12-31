@@ -10,6 +10,9 @@ const config = window.config || {
   VITE_DA_API_URL: 'http://localhost:8006' 
 };
 
+console.log("🎨 Frontend Loaded Config:", config);
+console.log("Global window.config:", window.config);
+
 const API_URL = (config.VITE_API_URL) + '/api/chat'
 const AI_CHAT_URL = (config.VITE_API_URL) + '/chat'
 const DA_API_URL = (config.VITE_DA_API_URL) + '/analyze'
