@@ -2,13 +2,15 @@
 
 [![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)]()
 [![Vue.js](https://img.shields.io/badge/Frontend-Vue.js-4FC08D?style=flat-square&logo=vue.js&logoColor=white)]()
-[![Google Gemini](https://img.shields.io/badge/AI-Gemini%202.5%20%2B%203%20Pro-8E75B2?style=flat-square&logo=google-gemini&logoColor=white)]()
+[![OpenRouter](https://img.shields.io/badge/AI-OpenRouter-7F52FF?style=flat-square&logo=openai&logoColor=white)]()
+[![DeepSeek](https://img.shields.io/badge/Reasoning-DeepSeek%20v3.2-1C58F2?style=flat-square)]()
+[![Mistral](https://img.shields.io/badge/Vision-Mistral%203B-FD6F00?style=flat-square)]()
 [![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)]()
 
 **🔴 LIVE DEMO:**
 [**🚀 Launch StockMind AI Dashboard**](https://forecasting-agent-frontend-567427950134.us-central1.run.app)
 
-An End-to-End AI-Powered Stock Forecasting & Analysis Platform. This project transforms raw market data into actionable insights using deep learning (NeuralForecast) and generative AI (Gemini Agent).
+An End-to-End AI-Powered Stock Forecasting & Analysis Platform. This project transforms raw market data into actionable insights using deep learning (NeuralForecast) and state-of-the-art Reasoning AI (DeepSeek R1/v3 via OpenRouter).
 
 ---
 
@@ -38,13 +40,14 @@ This project simulates a professional AI Engineering workflow, executed in **5 P
     *   Dynamic model loading.
     *   Standardized Input/Output schema.
 
-### Phase 4: AI Agent Engineering (GenAI) 🤖
-*   **Goal:** Create an autonomous market analyst agent to assist users.
-*   **Backend:** **FastAPI** service (Port 8005) acting as the "Brain".
+### Phase 4: AI Agent Engineering (Reasoning & Vision) 🤖
+*   **Goal:** Create an autonomous market analyst agent that can "See" and "Think".
+*   **Backend:** **FastAPI** service (Port 8005) acting as the "Brain", powered by **OpenRouter**.
 *   **Capabilities:**
-    *   **Snippet Mode:** Real-time Google Search Grounding for breaking news (Decoupled & Optimized).
-    *   **Vision Mode:** Analyzes chart screenshots for patterns (Double top/bottom, etc.) using Gemini 2.5 Flash.
-    *   **JSON Mode:** Answers technical questions with structured data using Gemini 3 Pro.
+    *   **Reasoning Agent:** Uses **DeepSeek v3.2** (with Thinking enabled) to answer complex financial questions and analyze market sentiment.
+    *   **Vision Agent:** Uses **Mistral 3B (Ministral)** to technically analyze stock charts (support/resistance, patterns) from images.
+    *   **Agent Search:** Uses **OpenRouter Web Plugin (Exa)** for real-time market news scouting (On-demand).
+    *   **Hybrid Architecture:** Automatically switches between Vision, Search, and Reasoning modes based on user input.
 
 ### Phase 5: DevOps & Deployment 🐳
 *   **Goal:** Ensure scalability and ease of deployment.
@@ -58,7 +61,7 @@ This project simulates a professional AI Engineering workflow, executed in **5 P
 | Component | Technologies |
 | :--- | :--- |
 | **Data Science** | Python 3.10, NeuralForecast, Pandas, NumPy, Scikit-Learn |
-| **AI Agent** | Google Gemini (2.5 Flash, 3 Pro), Google Search Grounding |
+| **AI Brain** | **OpenRouter** (DeepSeek v3.2, Mistral 3B, Exa Search Plugin) |
 | **Backend API** | FastAPI, Uvicorn, Python-Multipart, Pydantic |
 | **Frontend UI** | Vue.js 3, Vite, Tailwind CSS, Plotly.js |
 | **Infrastructure** | Docker, Docker Compose, Redis (Planned) |
@@ -88,7 +91,7 @@ The application is fully deployed on **Google Cloud Run** with a microservices a
 │   ├── api.py            
 │   └── Dockerfile
 ├── AI_Engineer/          # Phase 4: AI Agent & UI 
-│   ├── Backend/          # Gemini Chat Service
+│   ├── Backend/          # Reasoning Chat Service (OpenRouter)
 │   │   ├── app/          
 │   │   └── Dockerfile    
 │   └── Frontend/         # Vue.js Dashboard
