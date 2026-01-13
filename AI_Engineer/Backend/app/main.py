@@ -79,7 +79,9 @@ async def clear_memory(ticker: str):
 @app.get("/news/{ticker}")
 async def get_market_news(ticker: str):
     """Trigger Agent Search to get latest market news"""
-    news_report = await gemini_client.generate_market_report(ticker)
+    # SWITCH: Use OpenRouter (DeepSeek + Web Plugin)
+    from app.llm_client import llm_client
+    news_report = await llm_client.generate_market_report(ticker)
     return {"ticker": ticker, "news": news_report}
 
 

@@ -1,4 +1,5 @@
 from app.gemini_client import gemini_client
+from app.llm_client import llm_client
 from app.memory import memory
 import time
 import logging
@@ -30,7 +31,8 @@ async def process_chat(
         logger.info(f"Using VISION mode for: {message[:50]}...")
         mode = "vision"
         try:
-            vision_analysis = await gemini_client.analyze_chart(forecast_screenshot)
+            # SWITCH: Use OpenRouter (Mistral) for Vision
+            vision_analysis = await llm_client.analyze_chart(forecast_screenshot)
         except Exception as e:
             logger.error(f"Vision analysis failed: {e}")
             # Fallback to JSON mode
@@ -41,9 +43,9 @@ async def process_chat(
     # Get conversation history for context
     history = memory.get_history(ticker)
     
-    # Generate answer using Gemini Thinking
+    # Generate answer using DeepSeek (OpenRouter)
     try:
-        response = await gemini_client.answer_question(
+        response = await llm_client.answer_question(
             question=message,
             technical_data=technical_data,
             vision_analysis=vision_analysis,
