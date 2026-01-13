@@ -13,6 +13,8 @@ class LLMClient:
         
         if not self.api_key:
             logger.warning("OPENROUTER_API_KEY not found. Vision calls may fail.")
+            # Prevent startup crash by setting dummy key. Calls will fail later if not set.
+            self.api_key = "setup_needed"
 
         self.client = AsyncOpenAI(
             api_key=self.api_key,

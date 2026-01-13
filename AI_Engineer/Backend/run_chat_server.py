@@ -20,7 +20,10 @@ try:
     import uvicorn
     from app.main import app
     
-    uvicorn.run(app, host="0.0.0.0", port=8005, log_level="info")
+    # Cloud Run injects PORT env var
+    port = int(os.environ.get("PORT", 8005))
+    
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
     
 except Exception as e:
     print(f"ERROR: {e}")

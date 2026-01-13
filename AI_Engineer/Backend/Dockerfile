@@ -15,6 +15,9 @@ COPY . .
 # We will rely on docker volume mounting or COPY for now since it is secure in .env.
 # COPY .env . 
 
+# Enable unbuffered logging
+ENV PYTHONUNBUFFERED=1
+
 EXPOSE 8005
 
 CMD ["python", "run_chat_server.py"]
