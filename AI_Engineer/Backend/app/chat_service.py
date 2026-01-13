@@ -1,4 +1,4 @@
-from app.gemini_client import gemini_client
+# from app.gemini_client import gemini_client (Legacy)
 from app.llm_client import llm_client
 from app.memory import memory
 import time

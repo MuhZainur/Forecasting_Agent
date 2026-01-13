@@ -5,7 +5,7 @@ from typing import Optional, Dict, Any
 import logging
 from app.chat_service import process_chat
 from app.memory import memory
-from app.gemini_client import gemini_client
+# Removed legacy gemini_client import
 
 # Setup logging
 logging.basicConfig(
