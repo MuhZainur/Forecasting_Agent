@@ -2,6 +2,7 @@
 .env
 .env.*
 *.env
+!AI_Engineer/Frontend/.env.production
 
 # Python
 __pycache__/
