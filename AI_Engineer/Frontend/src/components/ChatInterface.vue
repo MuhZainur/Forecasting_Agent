@@ -5,9 +5,10 @@ import { marked } from 'marked'
 import PlotlyChart from './PlotlyChart.vue'
 
 // Use Runtime Config (Cloud Run) or Fallback (Local)
-const config = window.config || { 
-  VITE_API_URL: 'http://localhost:8005', 
-  VITE_DA_API_URL: 'http://localhost:8006' 
+const defaultBackend = 'https://forecasting-agent.onrender.com';
+const config = { 
+  VITE_API_URL: (typeof window !== 'undefined' && window.config && window.config.VITE_API_URL) || import.meta.env.VITE_API_URL || defaultBackend, 
+  VITE_DA_API_URL: (typeof window !== 'undefined' && window.config && window.config.VITE_DA_API_URL) || import.meta.env.VITE_DA_API_URL || import.meta.env.VITE_API_URL || defaultBackend 
 };
 
 console.log("🎨 Frontend Loaded Config:", config);

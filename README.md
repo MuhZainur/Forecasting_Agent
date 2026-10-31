@@ -8,7 +8,7 @@
 [![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)]()
 
 **🔴 LIVE DEMO:**
-[**🚀 Launch StockMind AI Dashboard**](https://forecasting-agent-frontend-567427950134.us-central1.run.app)
+[**🚀 Launch StockMind AI Dashboard**](https://forecasting-agent.vercel.app)
 
 An End-to-End AI-Powered Stock Forecasting & Analysis Platform. This project transforms raw market data into actionable insights using deep learning (NeuralForecast) and state-of-the-art Reasoning AI (DeepSeek R1/v3 via OpenRouter).
 
@@ -70,13 +70,13 @@ This project simulates a professional AI Engineering workflow, executed in **5 P
 
 ## 🚀 Deployment & Access
 
-The application is fully deployed on **Google Cloud Run** with a microservices architecture.
+The application is deployed on **Vercel** (Vue.js 3 Frontend) and **Render** (Unified FastAPI Backend).
 
 ### 🔗 Live Services
-*   **Frontend Dashboard:** [https://forecasting-agent-frontend-567427950134.us-central1.run.app](https://forecasting-agent-frontend-567427950134.us-central1.run.app)
-*   **Chat Backend (Swagger):** [https://forecasting-agent-agentic-backend-567427950134.us-central1.run.app/docs](https://forecasting-agent-agentic-backend-567427950134.us-central1.run.app/docs)
-*   **Data Agent (Swagger):** [https://forecasting-agent-data-agent-567427950134.us-central1.run.app/docs](https://forecasting-agent-data-agent-567427950134.us-central1.run.app/docs)
-*   **MLE API (Swagger):** [https://forecasting-agent-567427950134.us-central1.run.app/docs](https://forecasting-agent-567427950134.us-central1.run.app/docs)
+*   **Frontend Dashboard:** [https://forecasting-agent.vercel.app](https://forecasting-agent.vercel.app)
+*   **Unified API (Swagger):** [https://forecasting-agent.onrender.com/docs](https://forecasting-agent.onrender.com/docs)
+
+
 
 ---
 
