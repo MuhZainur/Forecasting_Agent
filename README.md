@@ -8,7 +8,7 @@
 [![Docker](https://img.shields.io/badge/Deployment-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)]()
 
 **🔴 LIVE DEMO:**
-[**🚀 Launch StockMind AI Dashboard**](https://forecasting-agent.vercel.app)
+[**🚀 Launch StockMind AI Dashboard**](https://forecasting-agent-6dly.vercel.app)
 
 An End-to-End AI-Powered Stock Forecasting & Analysis Platform. This project transforms raw market data into actionable insights using deep learning (NeuralForecast) and state-of-the-art Reasoning AI (DeepSeek R1/v3 via OpenRouter).
 
@@ -73,8 +73,8 @@ This project simulates a professional AI Engineering workflow, executed in **5 P
 The application is deployed on **Vercel** (Vue.js 3 Frontend) and **Render** (Unified FastAPI Backend).
 
 ### 🔗 Live Services
-*   **Frontend Dashboard:** [https://forecasting-agent.vercel.app](https://forecasting-agent.vercel.app)
-*   **Unified API (Swagger):** [https://forecasting-agent.onrender.com/docs](https://forecasting-agent.onrender.com/docs)
+*   **Frontend Dashboard:** [https://forecasting-agent-6dly.vercel.app](https://forecasting-agent-6dly.vercel.app)
+*   **Unified API (Swagger):** [https://forecasting-agent-1.onrender.com/docs](https://forecasting-agent-1.onrender.com/docs)
 
 
 

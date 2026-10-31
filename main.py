@@ -335,11 +335,14 @@ async def chat_endpoint(request: ChatRequest):
             technical_data=request.technical_data,
             forecast_screenshot=request.forecast_screenshot
         )
-        return ChatResponse(
-            response=res.get("response", "No response"),
-            mode=res.get("mode", "hybrid"),
-            processing_time=round(time.time() - t0, 2)
-        )
+        resp_text = res.get("response", "")
+        if resp_text and not resp_text.startswith("Maaf, terjadi error") and "401" not in resp_text:
+            return ChatResponse(
+                response=resp_text,
+                mode=res.get("mode", "hybrid"),
+                processing_time=round(time.time() - t0, 2)
+            )
+        logger.warning(f"AI Service returned auth/quota error: {resp_text}. Engaging analyst fallback.")
     except Exception as e:
         logger.warning(f"AI Service fallback engaged: {e}")
         
